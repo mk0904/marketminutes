@@ -1,24 +1,41 @@
-import logo from './logo.svg';
+import {useState, useEffect} from 'react';
 import './App.css';
+import Header from './components/header/Header'
+import HeroInfo from './components/heroInfo/HeroInfo'
+import Toggler from './components/toggler/Toggler';
+import GainersAndLosers from './components/gainersAndLosers/GainersAndLosers';
+import News from './components/news/News';
 
 function App() {
+  const [fetchedData, setFetchedData] = useState()
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    fetch(process.env.REACT_APP_API_URL).then(response => response.json()).then(data => setFetchedData(data[0]))
+  },[])
+
+  console.log(fetchedData)
+  useEffect(() => {
+    const body = document.body;
+    if (darkMode) {
+      body.classList.add('dark-mode');
+    } else {
+      body.classList.remove('dark-mode');
+    }
+  }, [darkMode]);
+
+  const toggleDarkMode = () => setDarkMode(!darkMode);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Toggler darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <div id="container">
+        <Header title={fetchedData?.title} date={fetchedData?.date} marketStatus={fetchedData?.marketStatus} sensex = {fetchedData?.sensex} nifty = {fetchedData?.nifty}/>
+        <HeroInfo data = {fetchedData?.introduction} aboutMarket={fetchedData?.about_market}/>
+        <GainersAndLosers topGainers = {fetchedData?.top_gainers} topLosers={fetchedData?.top_losers}/>
+        <News news={fetchedData?.news}/>
+      </div>
+    </main>
   );
 }
 
