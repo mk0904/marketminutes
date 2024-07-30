@@ -5,6 +5,11 @@ import HeroInfo from './components/heroInfo/HeroInfo'
 import Toggler from './components/toggler/Toggler';
 import GainersAndLosers from './components/gainersAndLosers/GainersAndLosers';
 import News from './components/news/News';
+import StockUpdates from './components/stockUpdates/stockUpdates';
+import WordOfTheDay from './components/wordOfTheDay/WordOfTheDay';
+import FeaturedQuestion from './components/featuredQuestion/FeaturedQuestion';
+import Course from './components/6DayCourse/6DayCourse';
+import DailyChange from './components/dailyChange/DailyChange';
 
 function App() {
   const [fetchedData, setFetchedData] = useState()
@@ -31,9 +36,14 @@ function App() {
       <Toggler darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <div id="container">
         <Header title={fetchedData?.title} date={fetchedData?.date} marketStatus={fetchedData?.marketStatus} sensex = {fetchedData?.sensex} nifty = {fetchedData?.nifty}/>
+        <DailyChange dailyChange={fetchedData?.daily_change}/>
         <HeroInfo data = {fetchedData?.introduction} aboutMarket={fetchedData?.about_market}/>
         <GainersAndLosers topGainers = {fetchedData?.top_gainers} topLosers={fetchedData?.top_losers}/>
         <News news={fetchedData?.news}/>
+        <StockUpdates news={fetchedData?.news}/>
+        <WordOfTheDay news={fetchedData?.news}/>
+        <FeaturedQuestion news={fetchedData?.news}/>
+        <Course news={fetchedData?.news}/>
       </div>
     </main>
   );

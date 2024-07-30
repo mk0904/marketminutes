@@ -11,7 +11,6 @@ function HeroInfo(props) {
           setHtmlContent(content);
         }, [props?.data, props?.aboutMarket]);
 
-     console.log(htmlContent)
   return (
     <div>
       <h1>Hero Info</h1>

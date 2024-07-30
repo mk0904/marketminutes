@@ -1,7 +1,6 @@
 function News (props) {
      let data = props?.news;
-     const finalData = data?.[0]['description']
-     console.log(finalData)
+     const finalData = data?.[0]['title'] === 'News' ? data?.[0]['description'] : 'No news available';
 
      return (
           <div>
