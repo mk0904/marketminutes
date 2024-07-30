@@ -10,6 +10,7 @@ import WordOfTheDay from './components/wordOfTheDay/WordOfTheDay';
 import FeaturedQuestion from './components/featuredQuestion/FeaturedQuestion';
 import Course from './components/6DayCourse/6DayCourse';
 import DailyChange from './components/dailyChange/DailyChange';
+import LongTermReturns from './components/longTermChange/LongTermReturns';
 
 function App() {
   const [fetchedData, setFetchedData] = useState()
@@ -44,6 +45,7 @@ function App() {
         <WordOfTheDay news={fetchedData?.news}/>
         <FeaturedQuestion news={fetchedData?.news}/>
         <Course news={fetchedData?.news}/>
+        <LongTermReturns returns={fetchedData?.long_term_returns}/>
       </div>
     </main>
   );
