@@ -36,6 +36,7 @@ function App() {
     <main>
       <Toggler darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <div id="container">
+        <h1 className='heroTitle'>marketminutes</h1>
         <Header title={fetchedData?.title} date={fetchedData?.date} marketStatus={fetchedData?.marketStatus} sensex = {fetchedData?.sensex} nifty = {fetchedData?.nifty}/>
         <DailyChange dailyChange={fetchedData?.daily_change}/>
         <HeroInfo data = {fetchedData?.introduction} aboutMarket={fetchedData?.about_market}/>

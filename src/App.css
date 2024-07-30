@@ -62,11 +62,26 @@ header {
 
 #container h1 {
   padding: 0;
-  margin: 0 0 10px 0;
 }
 
 #container p {
   opacity: 0.8;
+}
+
+.heroTitle {
+  font-size: 6vw;
+  margin-top: 3vw;
+}
+
+.hero{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: max-content;
+  border: #1a202c 3px solid;
+  border-radius: 12px;
+  padding: 30px;
 }
 
 .dark-mode {
@@ -74,7 +89,7 @@ header {
 }
 
 .dark-mode main {
-  background-color: #1a202c;
+  background-color: #0e1014;
 }
 
 .dark-mode #toggle {
