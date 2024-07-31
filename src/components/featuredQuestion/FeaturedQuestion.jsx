@@ -3,7 +3,7 @@ function FeaturedQuestion (props) {
      const finalData = data?.[4]['title'] === 'Featured Question' ? data?.[4]['description'] : 'No Questions Today';
      
      return (
-          <div>
+          <div className="hero">
                <h1>Question</h1>
                <div dangerouslySetInnerHTML={{ __html: finalData}} />
           </div>

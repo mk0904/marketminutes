@@ -3,7 +3,7 @@ function News (props) {
      const finalData = data?.[0]['title'] === 'News' ? data?.[0]['description'] : 'No news available';
 
      return (
-          <div>
+          <div className="hero">
                <h1>News</h1>
                <div dangerouslySetInnerHTML={{ __html: finalData}} />
           </div>

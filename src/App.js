@@ -37,6 +37,7 @@ function App() {
       <Toggler darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <div id="container">
         <h1 className='heroTitle'>marketminutes</h1>
+        <h2 className='title'>{fetchedData?.title}</h2>
         <Header title={fetchedData?.title} date={fetchedData?.date} marketStatus={fetchedData?.marketStatus} sensex = {fetchedData?.sensex} nifty = {fetchedData?.nifty}/>
         <DailyChange dailyChange={fetchedData?.daily_change}/>
         <HeroInfo data = {fetchedData?.introduction} aboutMarket={fetchedData?.about_market}/>
@@ -46,7 +47,7 @@ function App() {
         <WordOfTheDay news={fetchedData?.news}/>
         <FeaturedQuestion news={fetchedData?.news}/>
         <Course news={fetchedData?.news}/>
-        <LongTermReturns returns={fetchedData?.long_term_returns}/>
+        <LongTermReturns returns={fetchedData?.long_term_change}/>
       </div>
     </main>
   );

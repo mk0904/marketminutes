@@ -3,7 +3,7 @@ function StockUpdates (props) {
      const finalData = data?.[1]['title'] === 'Stocks Updates' ? data?.[1]['description'] : 'No Updates available';
 
      return (
-          <div>
+          <div className="hero">
                <h1>Stock Updates</h1>
                <div dangerouslySetInnerHTML={{ __html: finalData}} />
           </div>

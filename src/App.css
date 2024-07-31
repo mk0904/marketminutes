@@ -7,7 +7,7 @@
 
 body {
   color: #1a202c;
-  transition: color 0.2s ease-in;
+  transition: color 0.1s ease-in-out;
 }
 
 #app {
@@ -73,15 +73,97 @@ header {
   margin-top: 3vw;
 }
 
+.title{
+  font-size: 2vw;
+  margin-top: 30px;
+}
+
+.invisible{
+    display: flex;
+    margin: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+    border-radius: 12px;
+    padding: 30px;
+}
+
 .hero{
   display: flex;
+  width: 40em;
+  margin: 20px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: max-content;
-  border: #1a202c 3px solid;
+  border: #1a202c1a 3px solid;
   border-radius: 12px;
   padding: 30px;
+}
+
+.herohover{
+  transition: 600ms;
+  border-radius: 3px;
+  color: black;
+}
+
+.hero p{
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+/* grid */
+
+.gold{
+  background: rgba(255, 201, 24, 0.577);
+  border-radius: 12px;
+  background-blend-mode:lighten;
+}
+
+.dark-mode .gold{
+  background: rgba(255, 218, 95, 0.576);
+  border-radius: 12px;
+}
+
+.silver{
+  background: rgba(192, 192, 192, 0.5);
+  border-radius: 12px;
+}
+
+.usdinr{
+  background: rgba(246, 204, 255, 0.437);
+  border-radius: 12px;
+}
+
+.dowjones{
+  background: rgba(255, 206, 190, 0.5);
+  border-radius: 12px;
+}
+
+.nasdaq{
+  background: rgba(160, 238, 255, 0.5);
+  border-radius: 12px;
+
+}
+
+.gold p, .silver p, .usdinr p, .dowjones p, .nasdaq p{
+  font-size: 16px;
+  margin: -2px;
+  color: black;
+  font-weight: 600;
+  opacity: 1;
+}
+.gold h3, .silver h3, .usdinr h3, .dowjones h3, .nasdaq h3{
+  font-size: 20px;
+  margin: -2px;
+  color: black;
+  font-weight: 600;
+  opacity: 1;
+}
+
+.dark-mode .gold h3, .dark-mode .gold p,.dark-mode .silver h3,.dark-mode .silver p,.dark-mode .usdinr h3, .dark-mode .usdinr p,.dark-mode .dowjones h3, .dark-mode .dowjones p,.dark-mode .nasdaq h3, .dark-mode .nasdaq p{
+  color: white;
 }
 
 .dark-mode {
@@ -98,4 +180,9 @@ header {
 
 .dark-mode .toggle-inner {
   background-color: #1a202c;
+}
+
+.dark-mode .hero{
+  transition: 600ms;
+  border: #1a202c 3px solid;
 }

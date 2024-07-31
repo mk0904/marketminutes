@@ -9,7 +9,7 @@ function GainersAndLosers(props) {
           setHtmlContentTopLosers(topLosersContent);
         }, [props?.topGainers, props?.topLosers]);
   return (
-    <div>
+    <div className='hero'>
       <h1>Gainers and Losers</h1>
       <div dangerouslySetInnerHTML={{ __html: htmlContentTopGainers}} />
       <div dangerouslySetInnerHTML={{ __html: htmlContentTopLosers}} />

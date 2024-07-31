@@ -2,7 +2,7 @@ function LongTermReturns(props){
      const returnsData = props?.returns
      console.log(returnsData)
      return (
-     <div>
+     <div className="hero">
           <p>Sensex</p>
           <p>{returnsData?.['sensex']?.['perc_change']}</p>
           <p>Nifty</p>
